@@ -12,7 +12,6 @@ namespace Lab
 		[ConVar.ClientData( "lab_toolmode" )]
 		public string ToolMode { get; set; } = "create";
 
-
 		[Net]
 		public List<Entity> Selected { get; set; }
 
@@ -26,10 +25,13 @@ namespace Lab
 			DebugDrawHand( "Left", Input.VR.LeftHand );
 			DebugDrawHand( "Right", Input.VR.RightHand );
 
-			foreach ( var obj in Input.VR.TrackedObjects )
+
+			foreach ( var tracked in Input.VR.TrackedObjects )
 			{
-				DebugDrawTracked( obj );
+				DebugOverlay.Text( tracked.Transform.Position, $"Tracking: {tracked.Type}" );
 			}
+
+
 		}
 
 		private void DebugDrawTracked( Input.TrackedObject obj )

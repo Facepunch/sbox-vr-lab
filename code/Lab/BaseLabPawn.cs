@@ -29,7 +29,11 @@ namespace Lab
 			if ( Input.Down( InputButton.Run ) ) maxSpeed = 1000;
 			if ( Input.Down( InputButton.Duck ) ) maxSpeed = 100;
 
-			Velocity = Velocity.AddClamped( Input.Rotation * new Vector3( Input.Forward, Input.Left, Input.Up ) * maxSpeed * 5 * Time.Delta, maxSpeed );
+			var WishVelocity = Vector3.Zero;
+			WishVelocity += Input.VR.LeftHand.Joystick.Value.y * Input.VR.Head.Rotation.Forward;
+			WishVelocity += Input.VR.LeftHand.Joystick.Value.x * Input.VR.Head.Rotation.Right;
+
+			Velocity = Velocity.AddClamped( WishVelocity * maxSpeed * 5 * Time.Delta, maxSpeed );
 			Velocity = Velocity.Approach( 0, Time.Delta * maxSpeed * 3 );
 
 			//

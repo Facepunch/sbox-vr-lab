@@ -18,7 +18,7 @@ namespace Lab
 			base.Simulate( cl );
 
 			Rotation = Input.Rotation;
-			EyeRot = Rotation;
+			EyeRotation = Rotation;
 
 			DoMovement( cl );
 		}
@@ -43,7 +43,7 @@ namespace Lab
 
 			Position = helper.Position;
 			Velocity = helper.Velocity;
-			EyePos = Position;
+			EyePosition = Position;
 		}
 
 		public override void FrameSimulate( Client cl )
@@ -51,7 +51,7 @@ namespace Lab
 			base.FrameSimulate( cl );
 
 			Rotation = Input.Rotation;
-			EyeRot = Rotation;
+			EyeRotation = Rotation;
 			Position += Velocity * Time.Delta;
 		}
 	}

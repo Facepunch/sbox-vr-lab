@@ -1,4 +1,13 @@
 {
-	"sharedassets": "*.*",
-	"ident": "facepunch.vrlab"
+  "Title": "VR Lab",
+  "Type": "game",
+  "Org": "facepunch",
+  "Ident": "vrlab",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": null,
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Lab"
 }
